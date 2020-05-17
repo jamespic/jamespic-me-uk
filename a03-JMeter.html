@@ -1,0 +1,100 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<!-- Mirrored from jamespic.me.uk/a03-JMeter.html! by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 May 2020 18:51:53 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="author" content="James Pickering"/>
+<meta name="keywords" content="James Pickering, Newcastle, maths, operator theory, linux"/>
+	<title>James Pickering – LoadRunner vs JMeter</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="iron.css" title="Iron"/>
+<link rel="alternate stylesheet" type="text/css" media="screen" href="aurora3.css" title="Aurora"/>
+<link rel="stylesheet" type="text/css" media="print" href="print.css" /></head>
+<body>
+<h1 id="pageheader">James's Den</h1>
+<div class="nav">
+	<ul id="mbar">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="maths.html">Maths</a></li>
+		<li><a href="comp.html">Computer Stuff</a></li>
+		<li><a href="perf.html">Performance Blog</a></li>
+	</ul>
+	<div id="sidebit">
+		<div class="sidebar">
+			<div class="padbox">
+				<h3 class="smallheading">
+					Places				</h3>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="mainholder">
+	<div class="mainsection">
+		<div class="padbox">
+			<h1 id="title">LoadRunner vs JMeter</h1>
+
+					<h2 id="a03-JMeter.html"><a href="a03-JMeter.html">LoadRunner vs. JMeter</a> 
+<span class="subtitle">Tuesday, 26th October 2010</span></h2>
+
+<p>During some downtime on a recent project, I had a chance to look into open source performance testing software.
+Obviously, LoadRunner licenses are expensive, so there are a lot of situations where we, or clients, would prefer
+something cheaper.</p>
+
+<p>The most sophisticated piece of software on the open source scene is JMeter. The question is, can it substitute for
+Loadrunner?</p>
+
+<p>The short answer is that <strong>JMeter does about 60% of what LoadRunner does</strong>, but that is perhaps too short.
+Some projects need the other 40%, and some don't. I'll try to explain the key differences,
+but try to be objective (rather than thrifty) when evaluating your needs.</p>
+
+<p>Firstly, what JMeter does well. <strong>For purely web-based scripts, JMeter is hard to beat</strong>.
+It's easier to learn than LoadRunner, and has no obvious deficiencies when used in this way.
+Also, JMeter is far better for anything involving string handling; it has
+well integrated support for regular expressions, as well as a handful of
+scripting languages (string handling in LoadRunner, via C is a nightmare).</p>
+
+<p>It also supports protocols including SOAP, MQ (via JMS), SQL (via JDBC),
+TCP (cf. WinSock), as well as the usual suspects like SMTP and FTP.
+However, crucially <strong>JMeter can't <em>record</em> scripts in any of these protocols</strong> – scripts have to be either written
+from scratch, or recorded in something like Wireshark, then converted by hand.</p>
+
+<p>Also, <strong>LoadRunner is hard to match for recording and monitoring</strong>. JMeter can only monitor
+Apache Tomcat servers (even then, the monitoring's pretty basic), and has nothing even approaching LoadRunner Analysis.
+In short, if your test fails, there's relatively little that JMeter can do to help figure out why.</p>
+
+<p>So, what's JMeter useful for? If you're testing purely web-based systems, it'll likely do everything you need.
+If you're testing other protocols, you might have to work a bit harder, and if you're working to a deadline, you'll
+probably already be working pretty hard.</p>
+
+<p>However, JMeter has good integration with Apache Ant, which makes it potentially useful
+for automated regression testing (where time would be less of an issue anyway). Also, if you already have some
+LoadRunner scripts, it's not too difficult to port them to JMeter (for example, because you want to use them on
+a system which doesn't have appropriate licenses).</p>
+
+<p>JMeter is quite adequate for smaller or simpler projects, but LoadRunner is the market leader for a reason.
+LoadRunner is expensive, but it's hard to beat for big complicated projects. By all means, look at whether
+JMeter is a match for your particular needs, but remember:
+<strong>There's no surer way to look unprofessional, than using the wrong tool for the job</strong>.</p>
+
+		</div>
+	</div>
+	<div class="mainsection">
+		<div class="padbox">
+			<p>This site was created with <a href="https://www.kompozer.net/">KompoZer</a>
+			and <a href="https://www.screem.org/" >Screem</a>. Contact
+			me at <a href="mailto:james_pic@hotmail.com">james_pic@hotmail.com</a>.
+			Unless otherwise stated, all material on this website is released into
+			the <a href="https://en.wikipedia.org/wiki/Public_domain">public
+			domain</a>.</p>
+		
+			<p>For optimal viewing, Internet Explorer users should either download 
+			<a href="https://www.dessci.com/en/products/mathplayer/">MathPlayer</a>, or
+			use <a href="https://www.firefox.com/">a better browser</a>.</p>
+		</div>
+	</div>
+</div>
+</body>
+<!-- Mirrored from jamespic.me.uk/a03-JMeter.html! by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 May 2020 18:51:53 GMT -->
+</html>

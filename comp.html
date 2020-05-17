@@ -1,0 +1,167 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:m="http://www.w3.org/1998/Math/MathML">
+<!-- Mirrored from jamespic.me.uk/comp.xhtml by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 May 2020 18:51:24 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<head>
+<meta name="author" content="James Pickering"/>
+<meta name="keywords" content="James Pickering, Newcastle, maths, operator theory, linux"/>
+	<title>James Pickering – Computer Stuff</title>
+
+<link rel="stylesheet" type="text/css" media="screen" href="iron.css" title="Iron"/>
+<link rel="alternate stylesheet" type="text/css" media="screen" href="aurora3.css" title="Aurora"/>
+<link rel="stylesheet" type="text/css" media="print" href="print.css" /></head>
+<body>
+<h1 id="pageheader">James's Den</h1>
+<div class="nav">
+	<ul id="mbar">
+		<li><a href="index.html">Home</a></li>
+		<li><a href="maths.html">Maths</a></li>
+		<li><a href="comp.html">Computer Stuff</a></li>
+		<li><a href="perf.html">Performance Blog</a></li>
+	</ul>
+	<div id="sidebit">
+		<div class="sidebar">
+			<div class="padbox">
+				<h3 class="smallheading">
+					Computers				</h3>
+				<ul>
+					<li><a href="#a04-Latex.html">LaTeX</a></li>
+<li><a href="#a01-Roshambo.html">Roshambo</a></li>
+<li><a href="#a00-Links.html">Links</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+<div id="mainholder">
+	<div class="mainsection">
+		<div class="padbox">
+			<h1 id="title">Computer Stuff</h1>
+
+								<p>I run Ubuntu Linux as my main OS these days, and as anyone who
+			runs an open source operating system knows, the temptation to tinker
+			can be hard to ignore. Occasionally, that tinkering pays off, and this
+			page has a few bits and pieces that some of you may find interesting.</p>
+			<h2  id="a04-Latex.html">Some LaTeX Styles</h2>
+			
+			<p>In the course of my maths PhD, I've had to develop a couple of new
+			style files for LaTeX, where stock LaTeX was missing the features I needed.
+			Previously, these style files were buried in the source code for LaTeX
+			documents that no-one was likely to look at, so I decided to package them up
+			so anyone could find and use them.</p>
+			
+			<h3>Thesis Titlepages for <code>amsbook</code></h3>
+			
+			<p>My university, like many others, has pretty anal regulations about
+			the layout of thesis title pages. Unfortunately, document classes
+			such as <code>amsbook</code> don't include the necessary fields
+			on their title pages by default, so it's necessary to use custom code.</p>
+			
+			<p>There are currently two main ways people deal with this, and I'll 
+			explain why I don't like either of them:</p>
+			
+			<ul>
+				<li><strong>Template files:</strong> At most universities, the most experienced LaTeX
+				user has usually made up a thesis template, that anyone is free to use.
+				These are perfect if you're just starting out, as they give you a ready-made
+				template to start from. However, they're no good if you've already started
+				writing your thesis. Even if they can be added to an existing thesis (by means
+				of a style file, for example), they can be problematic, as they usually
+				auto-include various packages and macros that you may not want, and
+				mean adding kludgy, non-standard code.</li>
+				
+				<li><strong>Custom Made Title Pages</strong>: If you're an experienced LaTeX user,
+				creating a custom titlepage with the <code>\begin{titlepage}</code> environment
+				isn't too tricky. However, you then need to modify headings to include titles
+				or authors, and it means messy non-standard code. In particular, if you're using something
+				like LyX that creates titles with <code>\maketitle</code>, you're boned.
+				Also, it breaks the separation between content and style that LaTeX values so
+				highly</li>
+			</ul> 
+			
+			<p>My new <code>theshead.sty</code> LaTeX style automatically tweaks the
+			title page to conform to the Newcastle University thesis submission guidelines,
+			when used in an <code>amsbook</code> document.
+			It doesn't require any changes to the structure
+			of the document, and where possible, it uses information provided by the
+			<code>amsbook</code> class (like <code>\title</code>, <code>\author</code>,
+			<code>\address</code> and <code>\date</code>), as well as adding a couple
+			of other fields, in a similar vein (<code>\degreeclass</code> and <code>\logo</code>).
+			It works with LyX, and doesn't change anything beyond the title page.</p>
+			
+			<h3>Colour Changes in The Beamer <code>smoothtree</code> Theme</h3>
+			
+			<p>In my Beamer presentations, I like to have different colour for sections on
+			different subjects. With most Beamer themes, you can acomplish this with code like</p>
+			
+			<code>\definecolor{refresh}{RGB}{255,0,0}<br />
+			\setbeamercolor{structure}{fg=refresh}</code>
+			
+			<p>which gives subsequent slides a red colour scheme. However, the
+			<code>smoothtree</code> theme
+			doesn't work properly with this code, as it fixes some of the colours at the beginning of the
+			document.</p>
+			
+			<p><code>NewSmooth.sty</code> is a slight modification of the <code>smoothtree</code>
+			theme, that removes this limitation. It slows down compilation a touch, but on modern computers
+			this means less than a second's difference.</p>
+			
+			<p>Both style files <a href="comp/latex.zip">are available in this archive</a></p>
+			
+			<p><code>NewSmooth.sty</code> can be distributed under the GPL v2, or the LPPL v1.3.
+			<code>theshead.sty</code> can only be distributed under the LPPL v1.3. This is due to code inherited from
+			other style files.</p>
+			<h2 id="a01-Roshambo.html">Rock, Paper, Scissors</h2>
+			
+			<p>A few years ago, I discovered that a friend of mine could consistently
+			beat another friend of mine at rock, paper, scissors. The friend in
+			question was reasonably bright&nbsp;– he wasn't just playing "rock"
+			every time&nbsp;– and that set me off wondering if a computer could
+			do the same.</p>
+			
+			<p>Apparently I wasn't the first to ask this question; it turns
+			out the University of Alberta had been running a computer <a href="https://www.cs.ualberta.ca/~darse/rsbpc.html">Rock
+			Paper Scissors competition</a> for a couple of years. I thought
+			it'd be interesting to pit the best of the bots against a human player,
+			so I got the testing suite they used, and made some modifications to
+			allow a human to compete instead. The package includes the source, a
+			windows version, and a linux version. Go ahead and try it out.</p>
+			
+			<ul>
+				<li><a href="comp/Roshambo/roshambo.zip">zip file</a></li>
+				<li><a href="comp/Roshambo/roshambo.tar.bz2">tarball</a></li>
+			</ul>
+			<h2 id="a00-Links.html">Links</h2>
+			
+			<p>I can't take any credit for these things, but I've found them
+			useful; so might you.</p>
+			
+			<ul>
+				<li><a href="https://code.google.com/p/ultimate-gnome/">Ultimate
+				Gnome</a>: Not as macho as it sounds. A nice scalable icon set
+				for GNOME.</li>
+				
+				<li><a href="https://software.xfx.net/utilities/sss/index.htm">xFX
+				Screensaver Settings</a>: A replacement for
+				gnome-screensaver-preferences, which gives you access to more settings.</li>
+			</ul>
+
+		</div>
+	</div>
+	<div class="mainsection">
+		<div class="padbox">
+			<p>This site was created with <a href="https://www.kompozer.net/">KompoZer</a>
+			and <a href="https://www.screem.org/" >Screem</a>. Contact
+			me at <a href="mailto:james_pic@hotmail.com">james_pic@hotmail.com</a>.
+			Unless otherwise stated, all material on this website is released into
+			the <a href="https://en.wikipedia.org/wiki/Public_domain">public
+			domain</a>.</p>
+		
+			<p>For optimal viewing, Internet Explorer users should either download 
+			<a href="https://www.dessci.com/en/products/mathplayer/">MathPlayer</a>, or
+			use <a href="https://www.firefox.com/">a better browser</a>.</p>
+		</div>
+	</div>
+</div>
+</body>
+<!-- Mirrored from jamespic.me.uk/comp.xhtml by HTTrack Website Copier/3.x [XR&CO'2014], Sun, 17 May 2020 18:51:43 GMT -->
+</html>

@@ -1,0 +1,148 @@
+\documentclass[serif]{beamer}
+\usepackage[utf8]{inputenc}
+\usetheme{Warsaw}
+\usepackage{pxfonts}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\setlength\parskip{\medskipamount}
+
+\title{The Axiom of Choice and its Consequences}
+\author{James Pickering}
+\date{8th February 2007}
+
+\begin{document}
+
+\frame{\titlepage}
+
+\section{Introduction}
+\subsection{Background}
+
+\frame{
+\frametitle{Background}
+\begin{itemize}
+\item Used implicitly until late 19th Century
+\item Drive towards axiomatisation around 1900
+\item First formulated in 1904 by Ernst Zermelo
+\item ZF: Zermelo Fraenkel Axioms
+\end{itemize}
+}
+
+\subsection{Definition}
+\frame{
+\frametitle{Definition}
+Let $X_\alpha$ be a collection of non-empty disjoint sets where $\alpha \in A$. Then there is a function 
+$f:A \rightarrow \bigcup_{\alpha\in A}X_\alpha$ such that $f(\alpha)\in X_\alpha$.
+
+This can be rewritten as: 
+\[
+ X_\alpha \neq \emptyset\ \forall \alpha\in A \Rightarrow \prod_{\alpha\in A}X_\alpha \neq \emptyset
+\]
+
+I.e, A cartesian product of non-empty sets is non-empty.
+
+}
+
+\section{Independence}
+\subsection{Some Examples}
+\frame{
+\frametitle{Examples}
+\begin{itemize}
+ \item It is easy to see that for any $N\subseteq\mathbb{N}$, it is possible to choose some $n\in N$; simply choose the smallest element.
+ \item It is not obvious how to do this for subsets of $\mathbb{R}$.
+ \item In fact, it can be shown that if there is a way of choosing an element from each subset of $\mathbb{R}$, it is impossible to write down what it is.
+\end{itemize}
+}
+
+\subsection{Gödel and Cohen's Work}
+\frame{
+\frametitle{Gödel and Cohen's Work}
+\begin{itemize}
+ \item In 1940, Kurt Gödel showed that the axiom of choice couldn't be \emph{disproved} using the ZF axioms.
+ \item In 1963, Paul Cohen showed that the axiom of choice couldn't be \emph{proved} using the ZF axioms.
+ \item For this reason, it can't be proved as a theorem, so if we want to use it, we have to assume it as an axiom - hence the name.
+ \item We call the ZF axioms, with the axiom of choice added, the ZFC axioms
+\end{itemize}
+}
+
+\subsection{Equivalent Formulations}
+\frame{
+\frametitle{Equivalent Formulations}
+It can be shown that if we assume the ZF axioms, and any of the following theorems, we can prove the axiom of choice. The axiom of choice can also be used to prove all of these theorems, so they are in fact equivalent to the axiom of choice.
+\begin{itemize}
+ \item Every vector space has a basis.
+ \item If $A$ and $B$ are sets, either they are the same size, or one is larger than the other.
+ \item Every set can be well-ordered.
+ \item Zorn's Lemma.
+\end{itemize}
+}
+
+\frame{
+\frametitle{A Quote}
+\begin{quote}
+ ``The Axiom of Choice is obviously true, the well-ordering principle obviously false, and who can tell about Zorn's lemma?''
+\end{quote} 
+\begin{flushright}
+ --- Jerry Bona
+\end{flushright}
+}
+
+\section{Controversy}
+\subsection{Constructivity}
+\frame{
+\frametitle{Constructivity}
+\begin{itemize}
+ \item The axiom of choice is non-constructive.
+ \item Many of the sets whose existence it proves cannot be ``written down'', i.e, it is not possible to give a formula, algorithm or other mathematical identity that indicates what elements it contains.
+ \item The next slide  illustrates why this can be a problem.
+\end{itemize}
+
+}
+
+\subsection{The Banach-Tarski Paradox}
+\frame{
+\frametitle{The Banach-Tarski Paradox}
+Suppose we have a unit sphere $S$ in $\mathbb{R}^3$ -- a sphere in real space -- then (according to the axiom of choice) there is a way of cutting this sphere up into a finite number of pieces (at most 5), and rearranging these pieces to get two spheres identical to $S$.
+
+Moreover, it is impossible to write down what these pieces are.
+}
+
+\frame{
+\frametitle{Is This a Paradox?}
+\begin{itemize}
+ \item When Banach and Tarski first discovered this it seemed so unreasonable that they called it a paradox.
+ \item Others took the view that, whilst surprising, this result was not impossible, so called it the Banach-Tarski \emph{Theorem}.
+ \item One obvious reason why the Banach-Tarski Theorem is counterintuitive is that it appears to contradict the principle of conservation of mass.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Conservation of Mass}
+\begin{itemize}
+ \item We can see that this theorem doesn't hold in the real world, as real spheres are made up of atoms, or other quanta, and it would be impossible to perform this dissection without splitting these.
+ \item However, even if these spheres were made up of some homogeneous ``stuff'', this would not necessarily contradict conservation of mass, as it can be shown that some of the pieces have unmeasurable volume, and if the spheres have uniform density, this means the pieces have unmeasurable mass.
+ \item It can also be shown that any set with unmeasurable volume cannot be written down.
+\end{itemize}
+}
+
+\subsection{Attitudes}
+\frame{
+\frametitle{Schools of Thought}
+There are a number of schools of thought on this issue:
+\begin{itemize}
+ \item \emph{Constructivists} take the view ``If I can't see it, it's not there'', so generally take 
+the axiom of choice as being false. Errett Bishop famously argued this point of view.
+ \item \emph{Intuitionists} vary in their views on the axiom of choice, as there are compelling 
+arguments both for and against allowing the axiom. Cohen and Gödel both fall into this group, and had differing views on this issue.
+ \item \emph{Formalists} generally take the view that it's more convenient to assume the
+axiom of choice is true, as many important theorems are impossible to prove without it. David Hilbert is probably the best known formalist.
+\end{itemize}
+}
+
+\frame{
+\frametitle{Questions?}
+}
+
+\end{document} 
